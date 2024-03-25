@@ -1,0 +1,48 @@
+[
+    {
+        "title": "Scootertur? Jajjebus",
+        "images": [
+            {
+                "src": "/img/skoter/1.jpg",
+                "alt": "Elias och ture fixar"
+            },
+            {
+                "src": "/img/skoter/2.jpg",
+                "alt": "Ture och leo paråker"
+            },
+            {
+                "src": "/img/skoter/3.jpg",
+                "alt": "Selfie med elias"
+            },
+            {
+                "src": "/img/skoter/4.jpg",
+                "alt": "Fikapaus"
+            },
+            {
+                "src": "/img/skoter/5.jpg",
+                "alt": "Tre coola grabbar"
+            }
+        ]
+    },
+    {
+        "title": "Ture är naken",
+        "images": [
+            {
+                "src": "/img/Leo.webp",
+                "alt": "Leo"
+            },
+            {
+                "src": "/img/bo.jpg",
+                "alt": "Bo"
+            },
+            {
+                "src": "/img/mood.png",
+                "alt": "Mood"
+            },
+            {
+                "src": "/img/svavare.jpg",
+                "alt": "Svävare"
+            }
+        ]
+    }
+]

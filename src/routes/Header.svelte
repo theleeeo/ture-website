@@ -2,7 +2,7 @@
 </script>
 
 <header>
-	<img class="header-img" src="/img/ture_2.jpg" alt="" />
+	<img height="8rem" class="header-img" src="/img/ture_2.jpg" alt="" />
 </header>
 
 <style>
