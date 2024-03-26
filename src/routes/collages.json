@@ -25,23 +25,119 @@
         ]
     },
     {
-        "title": "Ture är naken",
+        "title": "Wholesome 100",
         "images": [
             {
-                "src": "/img/Leo.webp",
-                "alt": "Leo"
+                "src": "/img/hemavan/bäcken.jpg",
+                "alt": "Ture ser en bäck"
             },
             {
-                "src": "/img/bo.jpg",
-                "alt": "Bo"
+                "src": "/img/hemavan/face_svartvit.jpg",
+                "alt": "Tures ansike"
             },
             {
-                "src": "/img/mood.png",
-                "alt": "Mood"
+                "src": "/img/hemavan/görgo.jpg",
+                "alt": "Ture har det gött"
             },
             {
-                "src": "/img/svavare.jpg",
-                "alt": "Svävare"
+                "src": "/img/hemavan/spana.jpg",
+                "alt": "Ture njuter av utsikten"
+            },
+            {
+                "src": "/img/hemavan/stensittare.jpg",
+                "alt": "Ture och Leo sitter på ett berg"
+            },
+            {
+                "src": "/img/hemavan/thinker.jpg",
+                "alt": "Ture tänker (för en gångs skull)"
+            },
+            {
+                "src": "/img/hemavan/uwu.jpg",
+                "alt": "Ture är söt utan strumpor"
+            }
+        ]
+    },
+    {
+        "title": "Han markerar revir",
+        "images": [
+            {
+                "src": "/img/kiss/slätt.jpg",
+                "alt": "Ture kissar"
+            },
+            {
+                "src": "/img/kiss/båt.jpg",
+                "alt": "Ture kissar från en båt"
+            },
+            {
+                "src": "/img/kiss/uhh.jpg",
+                "alt": "Ture kissar"
+            }
+        ]
+    },
+    {
+        "title": "Ture gillar när det blir vått ;)",
+        "images": [
+            {
+                "src": "/img/h2oskoot/1.jpg",
+                "alt": "Ture med sin vattenskooter"
+            },
+            {
+                "src": "/img/h2oskoot/2.jpg",
+                "alt": "Leo är söt"
+            },
+            {
+                "src": "/img/h2oskoot/3.jpg",
+                "alt": "Ture och Leo, redo för allt"
+            },
+            {
+                "src": "/img/h2oskoot/4.jpg",
+                "alt": "Besto friendos"
+            }
+        ]
+    },
+    {
+        "title": "Photoshoot!",
+        "images": [
+            {
+                "src": "/img/greenscreen/1.jpg"
+            },
+            {
+                "src": "/img/greenscreen/2.jpg"
+            },
+            {
+                "src": "/img/greenscreen/3.jpg"
+            },
+            {
+                "src": "/img/greenscreen/4.jpg"
+            },
+            {
+                "src": "/img/greenscreen/5.gif"
+            },
+            {
+                "src": "/img/greenscreen/6.jpg"
+            }
+        ]
+    },
+    {
+        "title": "Photoshoot!",
+        "images": [
+            {
+                "src": "/img/nbskporr/1.jpg"
+            },
+            {
+                "src": "/img/nbskporr/2.jpg"
+            },
+            {
+                "src": "/img/nbskporr/3.jpg"
+            },
+            {
+                "src": "/img/nbskporr/4.jpg"
+            },
+            {
+                "src": "/img/nbskporr/5.jpg"
+            },
+            {
+                "src": "/img/nbskporr/6.jpg"
             }
         ]
     }

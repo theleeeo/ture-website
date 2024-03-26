@@ -5,7 +5,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let id: number;
-	export let images: { src: string; alt: string }[];
+	export let images: { src: string; alt?: string }[];
 </script>
 
 <Carousel.Root
@@ -20,7 +20,11 @@
 						dispatch('show', { carouselId: id, imageId: i });
 					}}
 				>
-					<img src={image.src} alt={image.alt} class="rounded-lg max-h-40 m-auto object-contain" />
+					<img
+						src={image.src}
+						alt={image.alt || 'Ture'}
+						class="rounded-lg max-h-40 m-auto object-contain"
+					/>
 				</button>
 			</Carousel.Item>
 		{/each}
