@@ -8,11 +8,14 @@
 			<li aria-current={$page.url.pathname === '/howto' ? 'page' : undefined}>
 				<a href="/howto">How To</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li id="home-link" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/faq' ? 'page' : undefined}>
 				<a href="/faq">FAQ</a>
+			</li>
+			<li aria-current={$page.url.pathname === '/secret' ? 'page' : undefined}>
+				<a href="/secret">Secret</a>
 			</li>
 		</ul>
 		<img class="header-img" src="/img/ture_2.jpg" alt="Ture" />
@@ -20,6 +23,13 @@
 </header>
 
 <style>
+	#home-link {
+		--color-theme-1: #ff0000;
+	}
+	#home-link a {
+		font-size: 2rem;
+	}
+
 	.header-img {
 		position: absolute;
 		top: 0;

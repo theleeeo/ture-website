@@ -96,14 +96,18 @@
 
 <Quiz desc={'Vad tycker Ture mest om?'} choices={['Kissa', 'Bajsa']} correct={1} />
 
-<div class="w-[100vw] h-16 mt-10 mb-10 bg-[url('/img/ture_2.jpg')] bg-contain"></div>
-
 <div class="text-region">
 	<p>Ture och Leo gillar att åka vattenskooter tillsammans och <s>pussas</s> vara straight</p>
 </div>
 
 <h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[3].title}</h2>
 <Carousel images={collages[3].images} id={3} on:show={showModalFunc} />
+
+<Quiz
+	desc={'Hur många Ture krävs det för att byta en glödlampa'}
+	choices={['3', 'För många för att räkna', '5', 'Omöjligt, han är för lat']}
+	correct={2}
+/>
 
 <div class="text-region">
 	<p>Det finns en typ av vattenskooter som fungerar i snö. Den kallas för en snöskooter.</p>
@@ -153,29 +157,7 @@
 
 <Quiz desc={'Är Ture en gullig liten pojke?'} choices={['Nej', 'Ja']} correct={1} />
 
-<div class="w-[100vw] flex justify-center">
-	<img
-		class="spin-hue w-2/3 rounded-xl border-solid border-8 border-red-500 m-8"
-		src="/img/bollar_1.jpg"
-		alt="Ture"
-	/>
-</div>
-
 <style>
-	/* Rotate the hue endlessly */
-	.spin-hue {
-		animation: spin-hue-anim 1.5s linear infinite;
-	}
-
-	@keyframes spin-hue-anim {
-		from {
-			filter: hue-rotate(0deg);
-		}
-		to {
-			filter: hue-rotate(360deg);
-		}
-	}
-
 	.default-button-hollow {
 		margin: 1rem;
 		padding: 1rem 2rem;
