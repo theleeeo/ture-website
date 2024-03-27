@@ -1,80 +1,96 @@
 <script lang="ts">
-	export let desc: string;
-	export let choices: string[];
-	export let correct: number;
+	import { fade } from 'svelte/transition';
 
-	let guess: number | undefined = undefined;
+	export let question: string;
+	export let options: string[];
+	export let answer: string;
+
+	let selectedOption = '';
+	let showFeedback = false;
+
+	function selectOption(option: any) {
+		selectedOption = option;
+		showFeedback = true;
+	}
+
+	function resetQuiz() {
+		selectedOption = '';
+		showFeedback = false;
+	}
 </script>
 
-<div class="quiz">
-	<p>{desc}</p>
-
-	<div class="choice-buttons">
-		{#each choices as c, i}
+<div class="quiz-container">
+	<div class="question">{question}</div>
+	<div class="options">
+		{#each options as option}
 			<button
-				class="choice{guess === i ? (guess === correct ? '-correct' : '-wrong') : ''}"
-				on:click={() => {
-					guess = i;
-				}}>{c}</button
+				class:correct={showFeedback && option === answer}
+				class:wrong={showFeedback && option !== answer && option === selectedOption}
+				on:click={() => selectOption(option)}
+				disabled={showFeedback}
 			>
+				{option}
+			</button>
 		{/each}
 	</div>
+	{#if showFeedback}
+		<p transition:fade class="feedback">
+			{selectedOption === answer ? 'Correct!' : 'Incorrect!'}
+		</p>
+		<button on:click={resetQuiz} class="reset-button">Try Again</button>
+	{/if}
 </div>
 
 <style>
-	.choice-correct {
-		background-color: rgb(3, 214, 3);
+	.quiz-container {
+		max-width: 80%;
+		margin: auto;
+		padding: 1.2em;
+		border-radius: 0.5em;
+		box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.1);
+		background: white;
 	}
-
-	.choice-wrong {
-		background-color: red;
+	.question {
+		font-size: 20px;
+		margin-bottom: 20px;
 	}
-
-	.choice {
-		color: var(--color-theme-2);
+	.options button {
+		display: block;
+		width: 100%;
+		padding: 0.6em 0.8em;
+		margin: 0.6em 0;
+		font-size: 1em;
+		color: #333;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		border-radius: 0.3em;
+		transition: all 0.3s ease;
 	}
-
-	.quiz {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		border: 2px solid var(--color-theme-2);
-		border-radius: 0.5rem;
+	.options button.correct {
+		background-color: #e9ffe8;
+		border-color: #28a745;
 	}
-
-	p {
-		margin: 1rem;
-
-		font-size: 1.3rem;
-		text-align: center;
+	.options button.wrong {
+		background-color: #ffecec;
+		border-color: #dc3545;
 	}
-
-	.choice-buttons {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	button {
-		background-color: transparent;
-		border: 2px solid var(--color-theme-2);
-		border-radius: 0.5rem;
-		cursor: pointer;
-		font-size: 1rem;
+	.feedback {
+		margin-top: 1.2em;
 		font-weight: bold;
-		margin: 0.5rem;
-		padding: 0.5rem 1rem;
-		text-transform: uppercase;
-		transition:
-			background-color 0.3s,
-			color 0.3s;
 	}
-
-	.choice:hover {
+	.reset-button {
+		display: block;
+		width: 100%;
+		padding: 0.6em 0.8em;
+		margin-top: 1.2em;
 		background-color: var(--color-theme-2);
 		color: white;
+		border: none;
+		border-radius: 0.3em;
+		font-size: 1em;
+		cursor: pointer;
+	}
+	.reset-button:hover {
+		background-color: #0900b3;
 	}
 </style>

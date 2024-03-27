@@ -71,7 +71,7 @@
 <h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[2].title}</h2>
 <Carousel images={collages[2].images} id={2} on:show={showModalFunc} />
 
-<Quiz desc={'Vad tycker Ture mest om?'} choices={['Kissa', 'Bajsa']} correct={1} />
+<Quiz question={'Vad tycker Ture mest om?'} options={['Kissa', 'Bajsa']} answer={'Bajsa'} />
 
 <div class="text-region">
 	<p>
@@ -90,9 +90,9 @@
 <Carousel images={collages[3].images} id={3} on:show={showModalFunc} />
 
 <Quiz
-	desc={'Hur många Ture krävs det för att byta en glödlampa'}
-	choices={['3', 'För många för att räkna', '5', 'Omöjligt, han är för lat']}
-	correct={2}
+	question={'Hur många Ture krävs det för att byta en glödlampa'}
+	options={['3', 'För många för att räkna', '5', 'Omöjligt, han är för lat']}
+	answer={'5'}
 />
 
 <div class="text-region">
@@ -141,7 +141,11 @@
 <h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[5].title}</h2>
 <Carousel images={collages[5].images} id={5} on:show={showModalFunc} />
 
-<Quiz desc={'Är Ture en gullig liten pojke?'} choices={['Nej', 'Ja']} correct={1} />
+<Quiz
+	question={'Är Ture en gullig liten pojke?'}
+	options={['Ja', 'Verkligen', 'Definitivt']}
+	answer={'Nej'}
+/>
 
 <style>
 	.default-button {
