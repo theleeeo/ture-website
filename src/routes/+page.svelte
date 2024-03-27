@@ -3,6 +3,7 @@
 	import Carousel from '$lib/Carousel.svelte';
 	import Quiz from '$lib/Quiz.svelte';
 	import collages from './collages.json';
+	import * as HoverCard from '$lib/components/ui/hover-card';
 
 	let showModal = false;
 	let modalData: { carouselId: number; imageId: number } = { carouselId: 0, imageId: 0 };
@@ -13,25 +14,7 @@
 		modalData = event.detail;
 		modalImage = collages[modalData.carouselId].images[modalData.imageId];
 	}
-
-	let isMusicPlaying = false;
-
-	function playMusic() {
-		const musicPlayer = document.getElementById('music-player') as HTMLVideoElement;
-		musicPlayer.play();
-		isMusicPlaying = true;
-	}
 </script>
-
-<video
-	style="display: {isMusicPlaying ? 'block' : 'none'};"
-	id="music-player"
-	src="/mov/lefishe.mp4"
-	controls
-	loop
->
-	<track kind="captions" />
-</video>
 
 {#if showModal}
 	<ImageModal
@@ -71,36 +54,39 @@
 		eller homage utan en återblick på bättre tider. Välkommen till Tures liv.
 	</p>
 
-	<p><i>He va bättre förr</i> - Karl Ture Miderfjäll</p>
+	<p><i>He va bättre förr</i> - Carl Ture Miderfjäll</p>
 </div>
-
-{#if !isMusicPlaying}
-	<button class="default-button-hollow" on:click={playMusic}>
-		Press here for background music</button
-	>
-{/if}
 
 <div class="text-region">
 	<p>Once upon a time var Ture i Hemavan. För det mesta så var det...</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[1].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[1].title}</h2>
 <Carousel images={collages[1].images} id={1} on:show={showModalFunc} />
 
 <div class="text-region">
 	<p>Men ibland så måste man ta sig en kisspaus</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[2].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[2].title}</h2>
 <Carousel images={collages[2].images} id={2} on:show={showModalFunc} />
 
 <Quiz desc={'Vad tycker Ture mest om?'} choices={['Kissa', 'Bajsa']} correct={1} />
 
 <div class="text-region">
-	<p>Ture och Leo gillar att åka vattenskooter tillsammans och <s>pussas</s> vara straight</p>
+	<p>
+		Ture och Leo har åkt på många utflykter tillsammans, men vi pratar inte om <HoverCard.Root>
+			<HoverCard.Trigger class="text-red-500 underline-offset-4 hover:underline">
+				<b><i>den gången</i></b>
+			</HoverCard.Trigger>
+			<HoverCard.Content class="w-80">
+				<p>Vi pratar inte om incidenten</p>
+			</HoverCard.Content>
+		</HoverCard.Root>
+	</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[3].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[3].title}</h2>
 <Carousel images={collages[3].images} id={3} on:show={showModalFunc} />
 
 <Quiz
@@ -114,7 +100,7 @@
 	<p>En sådan kan Ture och hans vänner också åka på.</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[0].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[0].title}</h2>
 <Carousel images={collages[0].images} id={0} on:show={showModalFunc} />
 
 <a class="default-button" href="https://www.youtube.com/watch?v=2qBlE2-WL60">Press me!</a>
@@ -131,7 +117,7 @@
 	<p>Viste ni att Ture var med och grundade Vogue?</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[4].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[4].title}</h2>
 <Carousel images={collages[4].images} id={4} on:show={showModalFunc} />
 
 <div class="text-region">
@@ -152,20 +138,12 @@
 	</p>
 </div>
 
-<h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[5].title}</h2>
+<h2 class="m-4 text-xl italic text-[--color-theme-1]">{collages[5].title}</h2>
 <Carousel images={collages[5].images} id={5} on:show={showModalFunc} />
 
 <Quiz desc={'Är Ture en gullig liten pojke?'} choices={['Nej', 'Ja']} correct={1} />
 
 <style>
-	.default-button-hollow {
-		margin: 1rem;
-		padding: 1rem 2rem;
-		border: 2px solid var(--color-theme-2);
-		border-radius: 1rem;
-		color: var(--color-theme-2);
-	}
-
 	.default-button {
 		margin: 1rem;
 		padding: 1rem 2rem;
@@ -173,19 +151,6 @@
 		border-radius: 1rem;
 		background-color: var(--color-theme-2);
 		color: white;
-	}
-
-	#music-player {
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: auto;
-		height: 10rem;
-		z-index: 1000;
-		margin: 1rem;
-
-		border: 2px solid var(--color-theme-2);
-		border-radius: 1rem;
 	}
 
 	.text-region {

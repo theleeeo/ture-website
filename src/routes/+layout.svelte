@@ -1,13 +1,37 @@
-<script>
+<script lang="ts">
 	import '../app.pcss';
 	import Header from './Header.svelte';
 	import './styles.css';
+
+	let isMusicPlaying = false;
+
+	function playMusic() {
+		const musicPlayer = document.getElementById('music-player') as HTMLVideoElement;
+		musicPlayer.play();
+		isMusicPlaying = true;
+	}
 </script>
 
 <div class="app">
 	<Header />
 
 	<main>
+		<video
+			style="display: {isMusicPlaying ? 'block' : 'none'};"
+			id="music-player"
+			src="/mov/lefishe.mp4"
+			controls
+			loop
+		>
+			<track kind="captions" />
+		</video>
+
+		{#if !isMusicPlaying}
+			<button class="default-button-hollow" on:click={playMusic}>
+				Press here for background music</button
+			>
+		{/if}
+
 		<slot />
 	</main>
 
@@ -17,6 +41,27 @@
 </div>
 
 <style>
+	.default-button-hollow {
+		margin: 1rem;
+		padding: 1rem 2rem;
+		border: 2px solid var(--color-theme-2);
+		border-radius: 1rem;
+		color: var(--color-theme-2);
+	}
+
+	#music-player {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: auto;
+		height: 10rem;
+		z-index: 1000;
+		margin: 1rem;
+
+		border: 2px solid var(--color-theme-2);
+		border-radius: 1rem;
+	}
+
 	.app {
 		display: flex;
 		flex-direction: column;
