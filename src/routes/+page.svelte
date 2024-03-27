@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ImageModal from '$lib/ImageModal.svelte';
 	import Carousel from '$lib/Carousel.svelte';
+	import Quiz from '$lib/Quiz.svelte';
 	import collages from './collages.json';
 
 	let showModal = false;
@@ -93,6 +94,10 @@
 <h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[2].title}</h2>
 <Carousel images={collages[2].images} id={2} on:show={showModalFunc} />
 
+<Quiz desc={'Vad tycker Ture mest om?'} choices={['Kissa', 'Bajsa']} correct={1} />
+
+<div class="w-[100vw] h-16 mt-10 mb-10 bg-[url('/img/ture_2.jpg')] bg-contain"></div>
+
 <div class="text-region">
 	<p>Ture och Leo gillar att åka vattenskooter tillsammans och <s>pussas</s> vara straight</p>
 </div>
@@ -139,12 +144,14 @@
 	</p>
 	<p>
 		De ställde upp Ture i månljuset, anlitade en professionell fotograf (Det var Leo, han är sämst),
-		och resten är historia.
+		och resten är historia...
 	</p>
 </div>
 
 <h2 class="text-xl m-4 italic text-[--color-theme-1]">{collages[5].title}</h2>
 <Carousel images={collages[5].images} id={5} on:show={showModalFunc} />
+
+<Quiz desc={'Är Ture en gullig liten pojke?'} choices={['Nej', 'Ja']} correct={1} />
 
 <style>
 	.default-button-hollow {
