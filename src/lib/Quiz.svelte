@@ -40,7 +40,7 @@
 		align-items: center;
 
 		border: 2px solid var(--color-theme-2);
-		border-radius: 1rem;
+		border-radius: 0.5rem;
 	}
 
 	p {

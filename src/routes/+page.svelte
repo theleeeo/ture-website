@@ -153,7 +153,29 @@
 
 <Quiz desc={'Är Ture en gullig liten pojke?'} choices={['Nej', 'Ja']} correct={1} />
 
+<div class="w-[100vw] flex justify-center">
+	<img
+		class="spin-hue w-2/3 rounded-xl border-solid border-8 border-red-500 m-8"
+		src="/img/bollar_1.jpg"
+		alt="Ture"
+	/>
+</div>
+
 <style>
+	/* Rotate the hue endlessly */
+	.spin-hue {
+		animation: spin-hue-anim 1.5s linear infinite;
+	}
+
+	@keyframes spin-hue-anim {
+		from {
+			filter: hue-rotate(0deg);
+		}
+		to {
+			filter: hue-rotate(360deg);
+		}
+	}
+
 	.default-button-hollow {
 		margin: 1rem;
 		padding: 1rem 2rem;
