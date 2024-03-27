@@ -24,7 +24,7 @@
 
 <style>
 	#home-link {
-		--color-theme-1: #ff0000;
+		--color-theme-1: var(--color-theme-2);
 	}
 	#home-link a {
 		font-size: calc(var(--text-size) * 1.3);
