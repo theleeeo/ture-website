@@ -57,6 +57,13 @@
 		max-width: 80%;
 	}
 
+	.modal-content :global(video) {
+		display: block;
+
+		max-height: 80%;
+		max-width: 80%;
+	}
+
 	@keyframes zoom {
 		from {
 			transform: scale(0);

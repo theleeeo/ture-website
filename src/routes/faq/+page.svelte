@@ -5,11 +5,11 @@
 		{
 			question: 'Blev han tappad som liten?',
 			answer:
-				'Fram tills ture fyllde 6 bodde han med en flock gätter, allt stångande har gjort honom lite vimsig.'
+				'Fram tills Ture fyllde 6 bodde han med en flock gätter, allt stångande har gjort honom lite vimsig.'
 		},
 		{
 			question: 'Skämtar han eller är han verkligen såhär?',
-			answer: 'Detta är den ture vi är fast med så vi får göra den bästa av situationen.'
+			answer: 'Detta är den Ture vi är fast med så vi får göra den bästa av situationen.'
 		},
 		{
 			question: 'Kan han spela Wonderwall?',
@@ -20,7 +20,7 @@
 			answer: 'Andras…'
 		},
 		{
-			question: 'Hur mång laxar i en laxask?',
+			question: 'Hur många laxar i en laxask?',
 			answer: '6'
 		}
 	];

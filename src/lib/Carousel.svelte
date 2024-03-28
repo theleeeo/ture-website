@@ -18,11 +18,17 @@
 						dispatch('show', { carouselId: id, imageId: i });
 					}}
 				>
-					<img
-						src={image.src}
-						alt={image.alt || 'Ture'}
-						class="m-auto max-h-40 rounded-lg object-contain"
-					/>
+					{#if image.src.endsWith('.mp4')}
+						<video class="m-auto max-h-40 rounded-lg object-contain" src={image.src} controls>
+							<track kind="captions" />
+						</video>
+					{:else}
+						<img
+							src={image.src}
+							alt={image.alt || 'Ture'}
+							class="m-auto max-h-40 rounded-lg object-contain"
+						/>
+					{/if}
 				</button>
 			</Carousel.Item>
 		{/each}
