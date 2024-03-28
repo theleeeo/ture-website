@@ -19,6 +19,10 @@
                 "alt": "Fikapaus"
             },
             {
+                "src": "/img/skoter/6.jpg",
+                "alt": "Tcå coola grabbar"
+            },
+            {
                 "src": "/img/skoter/5.jpg",
                 "alt": "Tre coola grabbar"
             }
@@ -54,6 +58,10 @@
             {
                 "src": "/img/hemavan/uwu.jpg",
                 "alt": "Ture är söt utan strumpor"
+            },
+            {
+                "src": "/img/hemavan/korv.jpg",
+                "alt": "Ture äter korv"
             }
         ]
     },

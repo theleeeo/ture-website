@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import HowToStep from './HowToStep.svelte';
+	import ImageModal from '$lib/ImageModal.svelte';
 
 	let steps = [
 		{
@@ -24,28 +25,55 @@
 			title: 'Öl -> Glad',
 			description:
 				'Om stackarn blir ledsen, ge honom ett glas vin eller en kall öl. Då ska du se att han fort blir glad igen. En glad Ture är en bra Ture.',
-			image: ''
+			image: '/img/öl.jpg'
 		},
 		{
 			title: 'Shorts är inte byxor',
 			description:
 				'Det är inte ens värt att försöka övertala honom om att shorts visst är byxor. Han kommer inte lyssna. Han kommer inte bry sig. Han kommer inte ändra sig. Det är inte värt försöket, pojken har bestämt sig.',
 			image: ''
+		},
+		{
+			title: 'Följ inte med till vattnet',
+			description:
+				'"Ska vi gå och bada?" kanske låter trevligt men nej! Fall inte för det! Håll dig säker på torra land, annars kommer du få en syn du sent kommer glömma.',
+			image: '/img/rumpa.jpg'
 		}
 	];
+
+	let showModal = false;
+	let modalImageSrc: string;
+
+	async function showModalFunc(event: any) {
+		showModal = true;
+		modalImageSrc = event.detail.src;
+	}
 </script>
+
+{#if showModal}
+	<ImageModal
+		on:hide={() => {
+			showModal = false;
+		}}
+	>
+		{#if modalImageSrc.endsWith('.mp4')}
+			<video src={modalImageSrc} controls>
+				<track kind="captions" />
+			</video>
+		{:else}
+			<img src={modalImageSrc} alt="Ture" />
+		{/if}
+	</ImageModal>
+{/if}
 
 <div>
 	<h1>Hur du överlever en dag med Ture:</h1>
 	{#each steps as { title, description, image }, i}
-		<HowToStep {title} {description} {image} />
+		<HowToStep on:show={showModalFunc} {title} {description} {image} />
 	{/each}
 </div>
 
 <style>
-	div {
-	}
-
 	h1 {
 		text-align: center;
 		color: #333;

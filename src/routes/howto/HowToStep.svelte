@@ -1,4 +1,8 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
 	export let title = 'Step title';
 	export let description = 'Step description';
 	export let image = ''; // Optional: Path to an image if needed
@@ -10,7 +14,13 @@
 	</div>
 	<p>{description}</p>
 	{#if image}
-		<img src={image} alt={title} class="step-image" />
+		<button
+			on:click={() => {
+				dispatch('show', { src: image });
+			}}
+		>
+			<img src={image} alt={title} class="step-image" />
+		</button>
 	{/if}
 </div>
 
