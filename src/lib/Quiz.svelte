@@ -24,7 +24,7 @@
 	<div class="options">
 		{#each options as option}
 			<button
-				class:correct={showFeedback && option === answer}
+				class:correct={showFeedback && option === answer && option === selectedOption}
 				class:wrong={showFeedback && option !== answer && option === selectedOption}
 				on:click={() => selectOption(option)}
 				disabled={showFeedback}

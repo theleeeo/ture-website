@@ -75,9 +75,10 @@
 
 <div class="text-region">
 	<p>
-		Ture och Leo har åkt på många utflykter tillsammans, men vi pratar inte om <HoverCard.Root>
+		Ture och Leo har åkt på många utflykter tillsammans. De flesta har varit bra, men så har vi ju
+		också <HoverCard.Root>
 			<HoverCard.Trigger class="text-red-500 underline-offset-4 hover:underline">
-				<b><i>den gången</i></b>
+				<b><i>den gången...</i></b>
 			</HoverCard.Trigger>
 			<HoverCard.Content class="w-80">
 				<p>Vi pratar inte om incidenten</p>
